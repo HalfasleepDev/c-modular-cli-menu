@@ -1,4 +1,4 @@
-# Modular CLI Menu in c
+# Modular CLI Menu for c
 
 ## Overview
 This C program provides a simple console-based menu system with navigation and selection capabilities. It allows users to navigate through menu options using numeric keys and select an option using the `ENTER` key. The selected option is then returned for further processing.
