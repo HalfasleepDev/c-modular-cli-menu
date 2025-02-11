@@ -16,13 +16,16 @@
 //set selected text to purple
 #define SELECT(string) "\x1b[35m" string "\x1b[0m"
 
+//set text to red for error
+#define NUHUH(string) "\x1b[31m" string "\x1b[0m"
+
 char getch();
 int menu(const char[], const char (*)[], const char[], int);
 
 int menu(const char header[], const char menuElements[][50], const char endPhrase[], int numOfElements){
     int option = 0, optionSel = 0, optionEnter = 0;
 
-    while(option != 9){
+    while(option != numOfElements){
         //print header
         printf("\n==============================================\n");
         printf("---%*s%*s---\n", 20+strlen(header)/2, header, 20-strlen(header)/2, "");
@@ -61,7 +64,10 @@ int menu(const char header[], const char menuElements[][50], const char endPhras
                 
             }
             else{
-                printf("Invalid choice. Please try again.\n");
+                //input error
+                system("clear");
+                printf(NUHUH("Invalid choice. Please try again.\n"));
+                continue;
             }
         }
         system("clear");
