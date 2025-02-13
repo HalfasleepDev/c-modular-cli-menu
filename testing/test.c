@@ -22,6 +22,8 @@ int main(){
     while(option != 3){
         option = menu(header, elemStrings, endString, 3);
         printf("\n SELECTED OPTION: %d\n", option);
+        //clear buffer when additional input is used
+        //while ((getchar()) != '\n');
     }
     return 0;
 }
@@ -70,6 +72,7 @@ int menu(const char header[], const char menuElements[][50], const char endPhras
             else{
                 system("clear");
                 printf(NUHUH("Invalid choice. Please try again.\n"));
+                //printf("%d\n", optionEnter);//17up,18down
                 continue;
             }
         }

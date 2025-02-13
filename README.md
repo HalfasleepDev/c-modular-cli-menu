@@ -62,6 +62,8 @@ int main() {
 
     int choice = menu(header, menuElements, endPhrase, numOfElements);
     printf("You selected option: %d\n", choice);
+    //clear buffer when additional input is used (loop)
+    //while ((getchar()) != '\n');
     return 0;
 }
 ```
@@ -77,5 +79,7 @@ int main() {
 Created by **HalfAsleepDev**
 
 ## Version
-- **1.0** (Last update: February 10, 2025)
+- **1.0** (Last update: February 11, 2025)
+- **2.0** (Last update: February 13, 2025)
+    - **BUG FIXES** Arrow key navigation, Clear buffer fix
 

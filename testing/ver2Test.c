@@ -1,19 +1,10 @@
-/*==================================================================================================+
-|   - Created by HalfAsleepDev                                                                      |
-|   - Version 2.0 (ARROW KEYS!!!!!!!!!!)                                                                                   |
-|   - Last update: Feb, 13, 2025                                                                    |
-+===================================================================================================+
-*/
-
 #include <stdio.h>
 #include <termios.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-
-#include "menu.h"
-
-//set selected text to purple
+//TODO: Add arrow controls for ver 2.0
+//set to text to purple
 #define SELECT(string) "\x1b[35m" string "\x1b[0m"
 
 //set text to red for error
@@ -21,6 +12,21 @@
 
 char getch();
 int menu(const char[], const char (*)[], const char[], int);
+
+int main(){
+    int option;
+    char header[] = "Weighted Grade Calculation Program";
+    const char elemStrings[3][50] = {"Single Student", "Multiple Students", "Exit"};
+    char endString[] = "HAVE A GOOD DAY!";
+
+    while(option != 3){
+        option = menu(header, elemStrings, endString, 3);
+        printf("\n SELECTED OPTION: %d\n", option);
+        //clear buffer when additional input is used
+        //while ((getchar()) != '\n');
+    }
+    return 0;
+}
 
 int menu(const char header[], const char menuElements[][50], const char endPhrase[], int numOfElements){
     int option = 0, optionSel = 0, optionEnter = 0, arrowPoint = 0, MaxNumOfElements;
@@ -70,6 +76,7 @@ int menu(const char header[], const char menuElements[][50], const char endPhras
             //if the arrowpoint has reached the max number
             if(arrowPoint > numOfElements){
                 arrowPoint -= numOfElements;
+                //arrowPoint++;
                 optionSel = arrowPoint;
             }
             else{
@@ -114,6 +121,7 @@ int menu(const char header[], const char menuElements[][50], const char endPhras
             else{
                 system("clear");
                 printf(NUHUH("Invalid choice. Please try again.\n"));
+                //printf("%d\n", optionEnter);//17up,18down
                 continue;
             }
         }
