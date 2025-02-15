@@ -83,3 +83,12 @@ Created by **HalfAsleepDev**
 - **2.0** (Last update: February 13, 2025)
     - **BUG FIXES** Arrow key navigation, Clear buffer fix
 
+## TODO:
+- [x] Start working on **adv-menu** (Last update: February 15, 2025)
+    - [ ] Make the menu *mostly* modular
+- [ ] Start working on Ver **3.0**
+- [ ] Seperate simple and advanced menus?
+- [ ] Re-orginize files
+- [ ] Create new README.md files
+- [ ] Seperate basic and advenced menu types
+

@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-//TODO: Add arrow controls for ver 2.0
 //set to text to purple
 #define SELECT(string) "\x1b[35m" string "\x1b[0m"
 
